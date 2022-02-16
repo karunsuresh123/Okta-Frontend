@@ -1,0 +1,12 @@
+<h1 class="ui header">OKTA Assignment Demo</h1>
+<div *ngIf="!(authStateService.authState$ | async)?.isAuthenticated">
+  <p> Please Sign In to view my Assignment.</p>
+  <button id="login-button" class="ui primary button" role="button" routerLink="/login">Login</button>
+</div>
+
+<div *ngIf="(authStateService.authState$ | async)?.isAuthenticated && userName">
+  <p>Thank You for Signing In to review my Assignment, {{ userName }}!</p>
+  <p>
+    You can view the Assignment by clicking <a href="/tasks">here</a>
+  </p>
+</div>
