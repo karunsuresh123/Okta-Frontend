@@ -24,7 +24,9 @@ export class TaskService {
     headers: new HttpHeaders(
       {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.accessToken,
+        'Authorization': 'Bearer ' + this.accessToken
+/*         'code_verifier':'M25iVXpKU3puUjFaYWg3T1NDTDQtcW1ROUY5YXlwalNoc0hhakxifmZHag',
+        'code_challenge':'qjrzSW9gMiUgpUvqgEPE4_-8swvyCtfOVvg55o5S_es' */
       }
     )
   }

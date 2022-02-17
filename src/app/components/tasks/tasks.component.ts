@@ -30,7 +30,7 @@ export class TasksComponent implements OnInit {
         var taskElement: Task = {
           _id: '',
           text: '',
-          daytime: '',
+          daytime: new Date(),
           reminder: false
         };
         taskElement._id = element._id;

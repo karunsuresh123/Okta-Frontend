@@ -13,7 +13,7 @@ export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
 
   text!: string;
-  daytime!: string;
+  daytime!: Date;
   reminder: boolean = false;
   showAddTask?: boolean;
   subscription?: Subscription;
@@ -41,11 +41,15 @@ export class AddTaskComponent implements OnInit {
     }
 
     this.onAddTask.emit(newTask);
-
     this.text = '';
-    this.daytime = '';
+    this.daytime = new Date();
     this.reminder = false;
 
+  }
+
+
+  dateChanged(eventDate: string): Date | null {
+    return !!eventDate ? new Date(eventDate) : null;
   }
 
 }

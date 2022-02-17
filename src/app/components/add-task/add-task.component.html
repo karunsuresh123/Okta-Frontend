@@ -5,7 +5,8 @@
     </div>
     <div class="form-control">
         <label for="daytime">Day & Time</label>
-        <input type="text" name="daytime" [(ngModel)]="daytime" id="daytime" placeholder="Add Day & Time" />
+        <!-- <input type="text" name="daytime" [(ngModel)]="daytime" id="daytime" placeholder="Add Day & Time" /> -->
+        <input type="datetime-local" name="daytime" [ngModel]="daytime | date:'yyyy-MM-ddTHH:mm'" (ngModelChange)= "dateChanged($event)"/>
     </div>
     <div class="form-control form-control-check">
         <label for="reminder">Set Reminder</label>
